@@ -1,0 +1,3 @@
+USE nodedb;
+
+CREATE TABLE people (id int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
