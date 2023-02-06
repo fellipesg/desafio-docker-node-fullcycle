@@ -2,7 +2,6 @@ FROM node:17.0.0-bullseye
 
 WORKDIR /usr/src/app
 
-RUN chmod +x entrypoint.sh
 
 RUN apt-get update && apt-get install -y wget
 
@@ -17,5 +16,7 @@ RUN npm install -y
 
 
 COPY . .
+
+RUN chmod +x entrypoint.sh
 
 EXPOSE 3000
