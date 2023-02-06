@@ -2,6 +2,8 @@ FROM node:17.0.0-bullseye
 
 WORKDIR /usr/src/app
 
+RUN chmod +x entrypoint.sh
+
 RUN apt-get update && apt-get install -y wget
 
 ENV DOCKERIZE_VERSION v0.6.1
@@ -12,6 +14,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 ADD package*.json ./
 
 RUN npm install -y
+
 
 COPY . .
 
